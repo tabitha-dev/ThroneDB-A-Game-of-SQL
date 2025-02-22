@@ -1,0 +1,40 @@
+name: Test SQL Queries
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test_sql:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: thronedb
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install PostgreSQL Client
+        run: sudo apt-get install -y postgresql-client
+
+      - name: Run Setup Script
+        run: psql -U postgres -h localhost -d thronedb -f setup.sql
+
+      - name: Run Data Insertion
+        run: psql -U postgres -h localhost -d thronedb -f data.sql
+
+      - name: Run Queries
+        run: psql -U postgres -h localhost -d thronedb -f queries.sql
