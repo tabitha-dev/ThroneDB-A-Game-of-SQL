@@ -7,7 +7,7 @@ import seaborn as sns
 conn = psycopg2.connect(
     dbname="thronedb",
     user="postgres",
-    password="your_password",
+    password="2686",
     host="localhost",
     port="5432"
 )
@@ -90,6 +90,3 @@ sns.countplot(x=df["tier"], palette="coolwarm")
 plt.xlabel("Customer Tier")
 plt.ylabel("Number of Customers")
 plt.title("🏆 Customer Spending Segments")
-plt.show()
-
-conn.close()
