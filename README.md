@@ -103,5 +103,5 @@ ORDER BY total_spent DESC;
 
 ---
 
-🚀 **Now you're ready to impress recruiters with this SQL project!** Let me know if you need changes! 🔥💡
+
 
