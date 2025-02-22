@@ -19,7 +19,7 @@ The project contains **three key tables**:
 2. **`medieval_store_products`** ⚔️ (Weapons, Armor, Potions, Magic Items)
 3. **`customer_orders`** 📝 (Who bought what, when, and for how much?)
 
-
+📂 **[View the Full Schema Here](setup.sql)**
 
 ---
 
@@ -94,8 +94,8 @@ ORDER BY total_spent DESC;
 ✅ Build **interactive dashboards** with **Power BI / Tableau**  
 ✅ Expand the dataset with **more medieval products & customers**  
 
----
 
+---
 
 ## ⭐ **If you find this project useful, give it a star!** 🌟  
 
@@ -103,6 +103,5 @@ ORDER BY total_spent DESC;
 
 ---
 
-
-
+🚀 **Now you're ready to impress recruiters with this SQL project!** Let me know if you need changes! 🔥💡
 
