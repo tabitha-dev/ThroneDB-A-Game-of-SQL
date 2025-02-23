@@ -88,6 +88,20 @@ ORDER BY total_spent DESC;
 - 🛠️ **Expandable** — Add more houses, products, and business logic!
 
 ---
+## ThroneDB Visualizations
+
+### 🏆 Top 10 Customers by Spending
+![Top Customers](top_customers.png)
+
+### ⚔️ Most Popular Medieval Products Sold
+![Top Products](top_products.png)
+
+### 📈 Sales Trend Over Time
+![Sales Trend](sales_trend.png)
+
+### 🎭 Customer Spending Segments
+![Customer Segments](customer_segments.png)
+
 
 ## 💡 Future Enhancements
 ✅ Integrate with a **Flask API** to fetch real-time SQL results  
