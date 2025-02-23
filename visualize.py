@@ -52,23 +52,28 @@ plt.show()
 
 ### 🚀 3. SALES TREND OVER TIME ###
 query = """
-    SELECT DATE(order_date) AS order_day, SUM(total_price) AS total_sales
+    SELECT DATE_TRUNC('month', order_date) AS sales_month, 
+           SUM(total_price) AS total_sales
     FROM customer_orders
-    GROUP BY order_day
-    ORDER BY order_day;
+    GROUP BY sales_month
+    ORDER BY sales_month;
 """
 df = pd.read_sql(query, conn)
 
-# 🎨 Line Chart
+
+# 🎨 Fixed Sales Trend Line Chart
 plt.figure(figsize=(12, 6))
-sns.lineplot(x=df["order_day"], y=df["total_sales"], marker="o", color="blue")
-plt.xlabel("Date")
+sns.lineplot(x=df["sales_month"], y=df["total_sales"], marker="o", color="blue")
+
+plt.xlabel("Month")
 plt.ylabel("Total Sales (Gold Coins)")
-plt.title("📅 Sales Trends Over Time")
+plt.title("📆 Monthly Sales Trend Over Time")
+
 plt.xticks(rotation=45)
 plt.grid()
-plt.savefig("sales_trend.png")
+plt.savefig("sales_trend_fixed.png")
 plt.show()
+
 
 ### 🚀 4. CUSTOMER SEGMENTATION ###
 query = """
